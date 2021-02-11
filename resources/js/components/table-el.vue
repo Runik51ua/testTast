@@ -135,7 +135,7 @@ export default {
             this.fields = response.data;
             this.loading = false;
         }).catch(error => {
-            if (error.response.status == 422) {
+            if (error.response.status === 422) {
                 this.errors = error.response.data.errors;
             }
             console.log('Error');
@@ -161,14 +161,10 @@ export default {
                 this.fields = response.data;
                 this.loading = false;
                 this.errors = {};
-                if (response.status == 204) {
-                    this.nothing = true;
-                }else{
-                    this.nothing = false;
-                }
+                this.nothing = response.status === 204;
 
             }).catch(error => {
-                if (error.response.status == 422) {
+                if (error.response.status === 422) {
                     this.errors = error.response.data.errors;
                 }
                 console.log('Error');
