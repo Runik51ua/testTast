@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('houses', [\App\Http\Controllers\api\HousesController::class, 'index']);
+Route::get('search', [\App\Http\Controllers\api\HousesController::class, 'search']);
