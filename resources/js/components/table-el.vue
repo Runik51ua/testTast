@@ -90,7 +90,7 @@
                 <th scope="col">Price</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody v-show="!loading">
             <tr v-for="(row, rindex) in fields">
                 <td scope="row">{{ rindex }}</td>
                 <td>{{ row.Name }}</td>

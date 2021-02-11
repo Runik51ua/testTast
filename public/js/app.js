@@ -38788,6 +38788,16 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: !_vm.loading,
+              expression: "!loading"
+            }
+          ]
+        },
         _vm._l(_vm.fields, function(row, rindex) {
           return _c("tr", [
             _c("td", { attrs: { scope: "row" } }, [_vm._v(_vm._s(rindex))]),
